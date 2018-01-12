@@ -7,13 +7,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-3">Travagram</h1>
-      </div>
-    </div>
-    <%= yield %>
-  </body>
+   <header class="navbar navbar-fixed-top navbar-inverse">
+       <div class="container">
+         <%= link_to "Travagram", '#', id: "logo" %>
+         <nav>
+           <ul class="nav navbar-nav navbar-right style-nav">
+             <li><%= link_to "SignUp",   '/users/new' %></li>
+             <li><%= link_to "Log in", '/login' %></li>
+           </ul>
+         </nav>
+       </div>
+ </header>
+ <div class="container">
+   <%= yield %>
+ </div>
+ </body>
 </html>
