@@ -10,11 +10,13 @@
   <body>
    <header class="navbar navbar-fixed-top navbar-inverse">
        <div class="container">
+         <h2>
          <%= link_to "Travagram", '#', id: "logo" %>
+         </h2>
          <nav>
-           <ul class="nav navbar-nav navbar-right style-nav">
-             <li><%= link_to "SignUp",   '/users/new' %></li>
-             <li><%= link_to "Log in", '/login' %></li>
+           <ul class="nav navbar-nav navbar-right">
+            <h4> <li><%= link_to "SignUp",   '/users/new' %></li> </h4>
+            <h4> <li><%= link_to "Log in", '/login' %></li> </h4>
            </ul>
          </nav>
        </div>
