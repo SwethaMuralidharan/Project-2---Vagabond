@@ -15,11 +15,21 @@
          </h2>
          <nav>
            <ul class="nav navbar-nav navbar-right">
-            <h4> <li><%= link_to "SignUp",   '/users/new' %></li> </h4>
-            <h4> <li><%= link_to "Log in", '/login' %></li> </h4>
+             <% if current_user %>
+               <h4><li><%= link_to "Profile", '#' %></li></h4>
+               <h4><li><%= link_to "Log Out", '/logout' %></li></h4>
+             <% else %>
+              <h4> <li><%= link_to "SignUp",   '/users/new' %></li> </h4>
+              <h4> <li><%= link_to "Log in", '/login' %></li> </h4>
+            <% end %>
            </ul>
          </nav>
        </div>
+       <% flash.each do |name, msg| %>
+          <p>
+            <small> <%= name.capitalize %>: <%= msg %> </small>
+          </p>
+       <% end %>
  </header>
  <div class="container">
    <%= yield %>
