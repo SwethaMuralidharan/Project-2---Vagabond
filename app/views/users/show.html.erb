@@ -1,3 +1,8 @@
+<div class="profile_info">
+   <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
+   <span class="glyphicon glyphicon-time"></span> Joined On <%= @user.created_at %><br>
+   <span class="glyphicon glyphicon-home"></span>  Living in <%= @user.current_city %>
+</div>
 <div>
- Welcome, <%= @user.firstname %>
+    <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
 </div>

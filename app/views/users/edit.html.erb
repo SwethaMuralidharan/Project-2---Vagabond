@@ -1,0 +1,32 @@
+
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+      <%= form_for @user do |f| %>
+        <br>
+        <h1> Edit User Profile: </h1>
+        <br>
+        <div class="layout">
+          <strong> First Name </strong>
+          <%= f.text_field :firstname,class:"form-control" %>
+        </div>
+
+        <div class="layout">
+          <strong> Last Name </strong>
+          <%= f.text_field :lastname,class:"form-control" %>
+        </div>
+
+        <div class="layout">
+          <strong> Current City </strong>
+          <%= f.text_field :current_city,class:"form-control" %>
+        </div>
+
+        <div class="center">
+          <%= f.submit "Update User Info",:class => "btn btn-primary" %>
+        </div>
+      <% end %>
+  </div>
+  <div class="col-md-4">
+  </div>
+</div>

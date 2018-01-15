@@ -13,9 +13,11 @@
  */
  @import "bootstrap";
  @import "users";
+ @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 header{
   background-color: #605d5a;
 }
 body{
   background-color: #ccbcad;
+  font-size: medium;
 }
