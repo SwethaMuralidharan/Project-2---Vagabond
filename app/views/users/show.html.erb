@@ -1,6 +1,6 @@
 
-<div class="content">
-  <div class="row">
+<div class="container">
+  <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="profile_info">
           <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
@@ -17,19 +17,18 @@
           <h1> Posts made by this user </h1>
           <br>
           <ul>
-          <% @user.posts.each do |post| %>
-            <li>
-              <div>
-              <%= link_to post.title,post_path(@user,post) %>
-              <button type="button" class="btn btn-info btn-md">
-                <span class="glyphicon glyphicon-pencil"></span>
-              </button>
-              <button type="button" class="btn btn-info btn-md">
-                <span class="glyphicon glyphicon-trash"></span>
-              </button>
-            </div>
-            </li>
-          <% end %>
+            <% @user.posts.each do |post| %>
+              <li>
+                <div>
+                  <%= link_to post.title,user_post_path(@user,post) %>
+                  <%= link_to '', edit_user_post_path(@user,post), class: "btn btn-info btn-md glyphicon glyphicon-pencil" %>
+                  <%= link_to '', [@user,post],
+                                method: :delete,
+                                class: "btn btn-info btn-md glyphicon glyphicon-trash",
+                                data: { confirm: 'Are you sure?' } %>
+                </div>
+              </li>
+            <% end %>
           </ul>
        </div>
       </div>
