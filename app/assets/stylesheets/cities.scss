@@ -1,6 +1,13 @@
 // Place all the styles related to the cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.city{
-  height:100px;
+image{
+    position: absolute;
+    margin-bottom: 20px;
+    line-height:1;
+    top:0;
+    left:0;
+    min-width:100%;
+    min-height: 200px;
+    max-height: 300px;
 }

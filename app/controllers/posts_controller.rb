@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post.city=@city
     @post.user=current_user
     if @post.save
-      redirect_to city_post_path(@city)
+      redirect_to city_path(@city)
     else
       flash[:error]=@post.errors.full_messages.join(", ")
       redirect_to root_path
