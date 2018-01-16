@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/sessions', to: 'sessions#create'
     get '/logout', to: 'sessions#destroy'
-    get '/users/:id/cities/:city_id', to: 'cities#show', as: 'city'
+    get '/cities/:city_id', to: 'cities#show', as: 'city'
     get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
     get '/users/:id', to: 'users#show', as: 'user'
     patch '/users/:id', to:'users#update'
