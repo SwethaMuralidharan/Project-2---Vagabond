@@ -11,14 +11,18 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
  @import "bootstrap";
  @import "users";
  @import "posts";
- @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+
 header{
   background-color: #605d5a;
 }
 body{
   background-color: #ccbcad;
-  font-size: medium;
+  font-size: x-large;
+}
+form{
+  font-size: large;
 }
