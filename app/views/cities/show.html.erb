@@ -5,7 +5,7 @@
       <h1><%= @city.name %></h1>
     </div>
     <div class="center">
-      <%= link_to "New Post", '', class: "btn btn-primary" %>
+      <%= link_to "New Post", city_post_path(@city), class: "btn btn-primary" %>
     </div>
   </div>
   <div class="row justify-content-center">

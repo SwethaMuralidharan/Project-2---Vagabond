@@ -5,6 +5,18 @@ class PostsController < ApplicationController
   def new
     @post=Post.new
   end
+  def create
+    @post=Post.new(post_params)
+    @city = City.find_by_id(params[:city_id])
+    @post.city=@city
+    @post.user=current_user
+    if @post.save
+      redirect_to city_post_path(@city)
+    else
+      flash[:error]=@post.errors.full_messages.join(", ")
+      redirect_to root_path
+    end
+  end
   def show
     @post=Post.find_by_id(params[:post_id])
     @user=User.find_by_id(params[:id])
