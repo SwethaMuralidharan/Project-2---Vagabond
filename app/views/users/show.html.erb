@@ -18,7 +18,17 @@
           <br>
           <ul>
           <% @user.posts.each do |post| %>
-            <li> <%=   link_to post.title %> </li>
+            <li>
+              <div>
+              <%= link_to post.title,post_path(@user,post) %>
+              <button type="button" class="btn btn-info btn-md">
+                <span class="glyphicon glyphicon-pencil"></span>
+              </button>
+              <button type="button" class="btn btn-info btn-md">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </div>
+            </li>
           <% end %>
           </ul>
        </div>

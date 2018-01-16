@@ -1,0 +1,17 @@
+<div class="content">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="profile_info">
+          <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
+          <br>
+          <span class="glyphicon glyphicon-time"></span> Joined On <%= @user.created_at %><br>
+          <span class="glyphicon glyphicon-home"></span>  Living in <%= @user.current_city %>
+          </div>
+      </div>
+      <div class="col-md-6">
+          <h1> <p class="header"> <%= @post.city.name %> </p> </h1>
+          <h1> <p class="header"> <%= @post.title %> : </p> </h1> <br>
+          <h2 class="justify"> <%= @post.content %> </h2>
+      </div>
+  </div>
+</div>

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
     get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
     get '/users/:id', to: 'users#show', as: 'user'
     patch '/users/:id', to:'users#update'
+    get '/users/:id/posts/:post_id', to:'posts#show', as: 'post'
 end
