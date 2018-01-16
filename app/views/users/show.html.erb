@@ -1,8 +1,27 @@
-<div class="profile_info">
-   <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
-   <span class="glyphicon glyphicon-time"></span> Joined On <%= @user.created_at %><br>
-   <span class="glyphicon glyphicon-home"></span>  Living in <%= @user.current_city %>
-</div>
-<div>
-    <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
+
+<div class="content">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="profile_info">
+          <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
+          <br>
+          <span class="glyphicon glyphicon-time"></span> Joined On <%= @user.created_at %><br>
+          <span class="glyphicon glyphicon-home"></span>  Living in <%= @user.current_city %>
+          </div>
+          <div class="center">
+            <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile_info">
+          <h1> Posts made by this user </h1>
+          <br>
+          <ul>
+          <% @user.posts.each do |post| %>
+            <li> <%=   link_to post.title %> </li>
+          <% end %>
+          </ul>
+       </div>
+      </div>
+  </div>
 </div>
