@@ -10,13 +10,13 @@
   <body>
    <header class="navbar navbar-fixed-top navbar-inverse">
        <div class="container">
-         <h2>
-         <%= link_to "Travagram", '/', id: "logo" %>
-         </h2>
+         <h1>
+           <%= link_to "Travagram", '/', id: "logo" %>
+         </h1>
          <nav>
            <ul class="nav navbar-nav navbar-right">
              <% if current_user %>
-               <h4><li><%= link_to "Profile", '#' %></li></h4>
+               <h4><li><%= link_to "Profile", user_path(current_user) %></li></h4>
                <h4><li><%= link_to "Log Out", '/logout' %></li></h4>
              <% else %>
               <h4> <li><%= link_to "SignUp",   '/users/new' %></li> </h4>
