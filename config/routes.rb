@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/sessions', to: 'sessions#create'
     get '/logout', to: 'sessions#destroy'
-    get '/cities/:city_id', to: 'cities#show', as: 'city'
+    get '/users/:id/cities/:city_id', to: 'cities#show', as: 'city'
     get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
     get '/users/:id', to: 'users#show', as: 'user'
     patch '/users/:id', to:'users#update'
@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     get '/users/:id/posts/:post_id/edit', to:'posts#edit', as: 'edit_user_post'
     patch '/users/:id/posts/:post_id', to:"posts#update"
     delete '/users/:id/posts/:post_id', to:"posts#destroy"
+    get '/cities/:city_id/posts', to:"posts#new", as: 'city_post'
+    post 'cities/:city_id/posts', to:"posts#create"
 end
