@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if current_user.id === params[:user_id]
+    if current_user.id === params[:id].to_i
       @post=Post.find_by_id(params[:post_id])
       @user=User.find_by_id(params[:id])
       @post.destroy
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if current_user.id === params[:user_id]
+    if current_user.id === params[:id].to_i
         @post=Post.find_by_id(params[:post_id])
         @user=User.find_by_id(params[:id])
         if @post.update(post_params)

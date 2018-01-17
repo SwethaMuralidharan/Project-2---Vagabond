@@ -13,15 +13,16 @@
   </div>
   <div class="row justify-content-center">
     <div class="col-md-6">
+        <br>
         <ul id="poststitle">
           <% @city.newest_posts.each do |post| %>
             <li>
-              <div class="round-image-100">
-                <%= image_tag(post.user.avatar.url(:thumb)) %>
-                <%= link_to post.title,user_post_path(post.user,post)  %>
-                <br>
-              </div>
+                <div class="round-image-50">
+                  <%= image_tag(post.user.avatar.url(:thumb)) %>
+                  <%= link_to truncate(post.content, :length => 80, :omission => '...... (view more)'),user_post_path(post.user,post)  %>
+                </div>
             </li>
+            <br>
           <% end %>
         </ul>
     </div>

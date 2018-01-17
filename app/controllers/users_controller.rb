@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.id === params[:user_id]
+    if current_user.id === params[:id].to_i
      user_id = params[:id]
      user = User.find_by_id(user_id)
      user.update_attributes(user_params)
