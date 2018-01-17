@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @city = City.find_by_id(params[:city_id])
   end
 
   def create
@@ -45,7 +46,4 @@ class UsersController < ApplicationController
   def user_params
       params.require(:user).permit(:avatar,:firstname, :lastname, :current_city, :email, :password)
   end
-
-
-
 end
