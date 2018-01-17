@@ -16,24 +16,22 @@
          <nav>
            <ul class="nav navbar-nav navbar-right">
              <% if current_user %>
-             <%= link_to "Profile", user_path(current_user) %>
-             <%= link_to "Log Out", '/logout' %>
-               <!-- <h4><li><%= link_to "Profile", user_path(current_user) %></li></h4>
-               <h4><li><%= link_to "Log Out", '/logout' %></li></h4> -->
+             <h3><li><%= link_to "Profile", user_path(current_user) %></li></h3>
+             <h3><li><%= link_to "Log Out", '/logout' %></li></h3>
              <% else %>
-              <h4> <li><%= link_to "SignUp",   '/users/new' %></li> </h4>
-              <h4> <li><%= link_to "Log in", '/login' %></li> </h4>
+              <h3> <li><%= link_to "Signup",   '/users/new' %></li> </h3>
+              <h3> <li><%= link_to "Login", '/login' %></li> </h3>
             <% end %>
            </ul>
          </nav>
        </div>
-       <% flash.each do |name, msg| %>
-          <p>
-            <small> <%= name.capitalize %>: <%= msg %> </small>
-          </p>
-       <% end %>
  </header>
  <div class="container">
+   <% flash.each do |name, msg| %>
+   <div class="alert <% if name=="error" %> alert-danger <% else %> alert-danger <% end %>">
+      <%= msg %>
+   </div>
+   <% end %>
    <%= yield %>
  </div>
  </body>

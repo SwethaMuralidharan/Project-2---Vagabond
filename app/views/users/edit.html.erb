@@ -1,10 +1,15 @@
 
 <div class="row justify-content-center">
   <div class="col-4">
+    <p id="notice"><%= notice %></p>
       <%= form_for @user do |f| %>
         <br>
         <h1> Edit User Profile: </h1>
         <br>
+        <div class="layout">
+          <strong> Upload your profile picture </strong>
+          <%= f.file_field :avatar, as: :file %>
+        </div>
         <div class="layout">
           <strong> First Name </strong>
           <%= f.text_field :firstname,class:"form-control" %>

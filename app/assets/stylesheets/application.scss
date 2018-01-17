@@ -15,15 +15,23 @@
  @import "bootstrap";
  @import "users";
  @import "posts";
-
+#logo{
+  line-height: 3.0;
+}
 header{
-  background-color: #605d5a;
+  background-color: "skyblue";
+  min-height: 1000px;
+  max-height: 1000px;
 }
 body{
   background-color: #ccbcad;
-  font-size: x-large;
 }
+
 form{
+  font-size: large;
+}
+
+.profile_info{
   font-size: large;
 }
 a:hover{

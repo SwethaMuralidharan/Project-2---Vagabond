@@ -13,9 +13,15 @@ class UsersController < ApplicationController
   end
 
   def create
-     @user = User.create(user_params)
-     login(@user)
-     redirect_to @user
+    @user=User.new(user_params)
+    if @user.save
+      login(@user)
+      redirect_to @user
+    else
+      flash[:notice] = "Please provide all the information to create a new account."
+      flash[:notice] = @user.errors.full_messages.join(" , ")
+      redirect_to '/users/new'
+    end
   end
 
   def edit
@@ -23,16 +29,21 @@ class UsersController < ApplicationController
   end
 
   def update
+    if current_user.id === params[:user_id]
      user_id = params[:id]
      user = User.find_by_id(user_id)
      user.update_attributes(user_params)
      redirect_to user_path(current_user)
+   else
+     flash[:notice]="Stop Hacking others profile information."
+     redirect_to user_path(current_user)
+   end
   end
 
   private
 
   def user_params
-      params.require(:user).permit(:firstname, :lastname, :current_city, :email, :password)
+      params.require(:user).permit(:avatar,:firstname, :lastname, :current_city, :email, :password)
   end
 
 

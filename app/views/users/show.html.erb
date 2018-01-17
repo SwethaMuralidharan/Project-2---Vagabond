@@ -3,13 +3,14 @@
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="profile_info">
+          <div class="round-image-100"><%= image_tag(@user.avatar.url(:medium)) %></div>
           <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
           <br>
           <span class="glyphicon glyphicon-time"></span> Joined On <%= @user.created_at %><br>
           <span class="glyphicon glyphicon-home"></span>  Living in <%= @user.current_city %>
           </div>
           <div class="center">
-            <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
+            <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary", params: {'user_id'=>current_user.id} %>
           </div>
       </div>
       <div class="col-md-6">
@@ -21,11 +22,12 @@
               <li>
                 <div>
                   <%= link_to post.title,user_post_path(@user,post) %>
-                  <%= link_to '', edit_user_post_path(@user,post), class: "btn btn-info btn-md glyphicon glyphicon-pencil" %>
+                  <%= link_to '', edit_user_post_path(@user,post), class: "btn btn-info btn-md glyphicon glyphicon-pencil", params: {'user_id'=>current_user.id}%>
                   <%= link_to '', [@user,post],
                                 method: :delete,
                                 class: "btn btn-info btn-md glyphicon glyphicon-trash",
-                                data: { confirm: 'Are you sure you want to delete #{post.title}?' } %>
+                                data: { confirm: 'Are you sure you want to delete ?' },
+                                params: {'user_id'=>current_user.id} %>
                 </div>
               </li>
             <% end %>
