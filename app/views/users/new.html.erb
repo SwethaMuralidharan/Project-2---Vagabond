@@ -3,21 +3,30 @@
   <div class="col-4">
     <br>
     <h1>  Create a new account  </h1>
+    <br>
         <%= form_for @user,html: { multipart: true } do |f| %>
-          <%= f.file_field :avatar, as: :file %>
           <div class="layout">
+            <label for f.file_field> Upload a Picture </label>
+            <%= f.file_field :avatar, as: :file %>
+          </div>
+          <div class="layout">
+            <label for f.text_field> First Name </label>
             <%= f.text_field :firstname, placeholder: "First Name", class: "form-control"%>
           </div>
           <div class="layout">
+            <label for f.text_field> Last Name </label>
             <%= f.text_field :lastname, placeholder: "Last Name", class: "form-control"%>
           </div>
           <div class="layout">
+            <label for f.text_field> Current City </label>
             <%= f.text_field :current_city, placeholder: "Current City", class: "form-control" %>
           </div>
           <div class="layout">
+            <label for f.email_field> Email </label>
             <%= f.email_field :email, placeholder: "Email", class: "form-control" %>
           </div>
           <div class="layout">
+            <label for f.password_field> Password </label>
             <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
           </div>
           <br>

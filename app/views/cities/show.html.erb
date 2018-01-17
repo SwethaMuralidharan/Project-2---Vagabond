@@ -1,6 +1,6 @@
 
 <div class="container">
-  <div id="header" class="row justify-content-center">
+  <div class="row justify-content-center">
     <div>
       <h1><%= @city.name %></h1>
     </div>
@@ -8,7 +8,7 @@
       <%= link_to "New Post", city_post_path(@city), class: "btn btn-primary" %>
     </div>
   </div>
-  <div class="row justify-content-center portrait">
+  <div class="row justify-content-center">
       <img src="<%= @city.image_url %>">
   </div>
   <div class="row justify-content-center">

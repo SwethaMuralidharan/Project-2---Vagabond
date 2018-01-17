@@ -3,27 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.portrait {
-  position: absolute;
-  margin-bottom: 20px;
-  line-height:1;
-  top:0;
-  left:0;
-  min-width:100%;
-  min-height: 500px;
-  max-height: 600px;
+// .portrait {
+//   position: absolute;
+//   margin-bottom: 20px;
+//   line-height:1;
+//   top:0;
+//   left:0;
+//   min-width:100%;
+//   min-height: 500px;
+//   max-height: 600px;
+// }
+// #header{
+//   background-color: #a38e56;
+// }
+//
+.round-image-50 {
+  width:800px;
 }
-#header{
-  background-color: #a38e56;
-}
-body{
-  font-size:5rem;
-
-}
-#floated{
-  float:left;
-  width:100px;
-}
-.round-image-50{
-  width:300px;
+a{
+  font-size: 1.8rem;
 }

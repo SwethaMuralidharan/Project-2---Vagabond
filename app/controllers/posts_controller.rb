@@ -15,8 +15,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to city_path(@city)
     else
-      flash[:error]=@post.errors.full_messages.join(", ")
-      redirect_to root_path
+      flash[:notice] = "Error in creating a post. Please try again." + @post.errors.full_messages.join(" , ")
+      redirect_to city_path(@city)
     end
   end
 

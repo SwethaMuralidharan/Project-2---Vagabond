@@ -1,8 +1,8 @@
 class User < ApplicationRecord
 
-  validates :firstname,presence: true,length:{ maximum: 255 }
-  validates :lastname,presence: true,length:{ maximum: 255 }
-  validates :current_city,presence: true,length:{ maximum: 255 }
+  validates :firstname,presence: true
+  validates :lastname,presence: true
+  validates :current_city,presence: true
   validates :email,presence: true,length:{ maximum: 255 },uniqueness: true,format:{ with: /@/, message:"must include @" }
   validates :password_digest,presence: true
 

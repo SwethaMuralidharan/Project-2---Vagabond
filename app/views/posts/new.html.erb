@@ -1,11 +1,12 @@
 <div class="row justify-content-center">
   <div class="col-4">
+        <p id="notice"><%= notice %></p>
         <%= form_for [@city,@post], url:city_post_path do |f| %>
           <br>
-          <h1> New Post <%= @post.city.name %> </h1>
+          <h1> Add a New Post </h1>
           <br>
           <div class="layout">
-            <strong> Post Title </strong>
+            <strong> Title </strong>
             <%= f.text_field :title,class:"form-control" %>
           </div>
 
