@@ -8,13 +8,13 @@
       <%= link_to "New Post", city_post_path(@city), class: "btn btn-primary" %>
     </div>
   </div>
-  <div class="row justify-content-center">
-      <img class="city" src="<%= @city.image_url %>">
+  <div class="row justify-content-center portrait">
+      <img src="<%= @city.image_url %>">
   </div>
   <div class="row justify-content-center">
     <div class="col-md-6">
         <ul id="poststitle">
-          <% @city.posts.each do |post| %>
+          <% @city.newest_posts.each do |post| %>
             <li>
               <div>
                 <%= link_to post.title,user_post_path(post.user,post)  %>

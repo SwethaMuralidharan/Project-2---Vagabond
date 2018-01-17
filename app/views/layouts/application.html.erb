@@ -16,8 +16,10 @@
          <nav>
            <ul class="nav navbar-nav navbar-right">
              <% if current_user %>
-               <h4><li><%= link_to "Profile", user_path(current_user) %></li></h4>
-               <h4><li><%= link_to "Log Out", '/logout' %></li></h4>
+             <%= link_to "Profile", user_path(current_user) %>
+             <%= link_to "Log Out", '/logout' %>
+               <!-- <h4><li><%= link_to "Profile", user_path(current_user) %></li></h4>
+               <h4><li><%= link_to "Log Out", '/logout' %></li></h4> -->
              <% else %>
               <h4> <li><%= link_to "SignUp",   '/users/new' %></li> </h4>
               <h4> <li><%= link_to "Log in", '/login' %></li> </h4>
