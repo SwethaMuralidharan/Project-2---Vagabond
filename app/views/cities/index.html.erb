@@ -1,0 +1,12 @@
+<div class="carousel-inner">
+ <% @cities.each_with_index do |city, i| %>
+   <div>
+       <div class="header">
+         <h1> <%= link_to city.name,city_path(city.id) %> </h1>
+      </div>
+      <div class="sitewide-header">
+        <img src='<%= city.image_url %>' />
+     </div>
+   </div>
+ <% end %>
+</div>

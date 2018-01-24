@@ -13,6 +13,7 @@
           <h1> <p class="header"> City : <%= @post.city.name %> </p> </h1><br>
           <h2 class="justify"> <p> <%= @post.title %> : </p> </h2> <br>
           <h3 class="justify"> <%= @post.content %> </h3>
+          <%= time_ago_in_words(@post.created_at) %> ago
       </div>
   </div>
 </div>

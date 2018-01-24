@@ -20,6 +20,7 @@
                 <div class="round-image-50">
                   <%= image_tag(post.user.avatar.url(:thumb)) %>
                   <%= link_to truncate(post.content, :length => 80, :omission => '...... (view more)'),user_post_path(post.user,post)  %>
+                  <%= time_ago_in_words(post.created_at) %> ago
                 </div>
             </li>
             <br>

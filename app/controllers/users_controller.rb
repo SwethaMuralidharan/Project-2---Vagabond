@@ -41,7 +41,16 @@ class UsersController < ApplicationController
      redirect_to user_path(current_user)
    end
   end
-
+  def destroy
+    if current_user.id === params[:id].to_i
+      @user=User.find_by_id(params[:id])
+      @user.destroy
+      redirect_to '/'
+    else
+      flash[:notice]="Stop hacking others posts information."
+      redirect_to user_path(current_user)
+    end
+  end
   private
 
   def user_params
