@@ -2,51 +2,16 @@
 <!-- indicators -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-
-    <div class="carousel-item active">
-      <a href="http://localhost:3000/cities/1">
-        <img class="d-block w-100" src="http://www.sftravel.com/sites/sftraveldev.prod.acquia-sites.com/files/field/image/golden-gate-bridge-1030999_1440.jpg"></a>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1><a href="http://localhost:3000/cities/1">San Francisco</a></h1>
-            <h1><p>Visiting The Golden Gate Bridge</p></h1>
-          </div>
-        </div>
+   <% @cities.each_with_index do |city, i| %>
+     <div class='<%= if i == 0 then "carousel-item active" else "carousel-item" end %>'>
+       <img src='<%= city.iconic_image%>' />
+       <div class="carousel-caption">
+         <h1> <%= link_to city.name,city_path(city.id) %> </h1>
+         <h1> <%= city.caption %> </h1>
+       </div>
      </div>
-
-    <div class="carousel-item">
-      <a href="http://localhost:3000/cities/2"><img class="d-block w-100" src="http://www.manfrottoschoolofxcellence.com/wp-content/uploads/2016/03/header-crop-1440x700.jpg"></a>
-      <div class="carousel-caption">
-        <h1><a href="http://localhost:3000/cities/2">New York</a></h1>
-        <h1>Walking The Streets That Never Sleep</h1>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <a href="http://localhost:3000/cities/3"><img class="d-block w-100" src="https://www.adventuresports.ae/wp-content/uploads/2015/02/H_wakebaord_001.jpg" alt="Third slide">
-        <div class="carousel-caption">
-          <h1><a href="http://localhost:3000/cities/3">Miami</a></h1>
-          <h1>Wake Boarding In The Summer</h1>
-        </div>
-    </div>
-
-<div class="carousel-item">
-  <a href="http://localhost:3000/cities/4"><img class="d-block w-100" src="http://static.peakview.bg/img/data/31/programi/3513/BIG_IMG.jpg">
-    <div class="carousel-caption">
-      <h1><a href="http://localhost:3000/cities/4">London</a></h1>
-      <h1>Bus Tour to See Big Ben</h1>
-    </div>
-</div>
-
-<div class="carousel-item">
-  <a href="http://localhost:3000/cities/5"><img class="d-block w-100" src="http://www.iat-sia.org/uploads/images/Spain%20-%202015%20IAT%20Tour%20-%20IMG_4668em.jpg">
-    <div class="carousel-caption">
-      <h1><a href="http://localhost:3000/cities/5">Gibraltar</a></h1>
-      <h1>Viewing The Sights</h1>
-    </div>
-</div>
-</div>
-
+   <% end %>
+  </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>

@@ -21,7 +21,7 @@
             <% @user.posts.each do |post| %>
               <li>
                 <div>
-                  <%= link_to link_to truncate(post.content, :length => 80, :omission => '...... (view more)'),user_post_path(@user,post) %>
+                  <%= link_to  truncate(post.content, :length => 80, :omission => '...... (view more)'),user_post_path(@user,post) %>
                   <%= link_to '', edit_user_post_path(@user,post), class: "btn btn-info btn-md glyphicon glyphicon-pencil", params: {'post[id]'=>current_user.id}%>
                   <%= link_to '', [@user,post],
                                 method: :delete,
