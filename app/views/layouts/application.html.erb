@@ -17,15 +17,19 @@
            <%= link_to "Cities", '/cities' %>
          </h1>
          <nav>
-           <ul class="nav navbar-nav navbar-right">
+           <div class="nav navbar-nav navbar-right">
              <% if current_user %>
-             <h3><li><%= link_to "Profile", user_path(current_user) %></li></h3>
-             <h3><li><%= link_to "Log Out", '/logout' %></li></h3>
+             <h3>
+                 <%= link_to "Profile", user_path(current_user) %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <%= link_to "Log Out", '/logout' %>
+            </h3>
              <% else %>
-              <h3> <li><%= link_to "Signup",   '/users/new' %></li> </h3>
-              <h3> <li><%= link_to "Login", '/login' %></li> </h3>
+              <h3>
+                   <%= link_to "Signup",   '/users/new' %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   <%= link_to "Login", '/login' %>
+              </h3>
             <% end %>
-           </ul>
+          </div>
          </nav>
        </div>
  </header>
@@ -38,4 +42,5 @@
    <%= yield %>
  </div>
  </body>
+
 </html>

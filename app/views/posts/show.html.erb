@@ -2,18 +2,22 @@
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="profile_info">
-          <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
-          <div class="round-image-100"><%= image_tag(@user.avatar.url(:medium)) %></div>
-          <br>
-          <h4><span class="glyphicon glyphicon-time"></span> Joined On <%= @user.created_at %><br></h4>
-          <h4><span class="glyphicon glyphicon-home"></span>  Living in <%= @user.current_city %></h4>
+              <div class="profile_header"> <h1 class="title"> User Info </h1> </div>
+              <div class="round-image-100"><%= image_tag(@user.avatar.url(:medium)) %></div>
+              <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
+              <br>
+              <span class="glyphicon glyphicon-time"></span> Joined on <%= @user.created_at.strftime("%B") %> <%= @user.created_at.year %><br>
+              <span class="glyphicon glyphicon-home"></span>  Lives in <%= @user.current_city %>
           </div>
       </div>
       <div class="col-md-6">
-          <h1> <p class="header"> City : <%= @post.city.name %> </p> </h1><br>
-          <h2 class="justify"> <p> <%= @post.title %> : </p> </h2> <br>
-          <h3 class="justify"> <%= @post.content %> </h3>
-          <%= time_ago_in_words(@post.created_at) %> ago
+        <div class="profile_info">
+          <div> <h1 class="title"> Posts made by this user </h1> </div><br>
+           <h1 class="title"> City : <%= @post.city.name %> </h1> <br>
+           <h2 class="justify"> <p> <%= @post.title %> : </p> </h2> <br>
+           <h3 class="justify"> <%= @post.content %> </h3>
+           -<%= time_ago_in_words(@post.created_at) %> ago
       </div>
   </div>
+</div>
 </div>

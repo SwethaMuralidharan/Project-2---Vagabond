@@ -20,14 +20,25 @@
 .round-image-50 {
   width:800px;
 }
+.flex-container {
+  display: flex;
+}
+.content{
+  text-align: justify;
+  padding-top: 15px;
+}
 a{
   font-size: 1.8rem;
 }
-.header{
+.head{
   font-size:3rem;
   color:#296cd8;
   margin-left: 500px;
 }
 .sitewide-header{
   border-radius: 1px solid black;
+}
+.left{
+  float: left;
+
 }

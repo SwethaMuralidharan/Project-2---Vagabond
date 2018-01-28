@@ -3,21 +3,23 @@
   <div class="row justify-content-center">
       <div class="col-md-6">
           <div class="profile_info">
-            <h1> User Profile </h1>
-          <div class="round-image-100"><%= image_tag(@user.avatar.url(:medium)) %></div>
-          <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
-          <br>
-          <span class="glyphicon glyphicon-time"></span> Joined On <%= @user.created_at %><br>
-          <span class="glyphicon glyphicon-home"></span>  Living in <%= @user.current_city %>
+              <div class="profile_header"> <h1 class="title"> User Profile </h1> </div>
+              <br>
+              <div class="round-image-100"><%= image_tag(@user.avatar.url(:medium)) %></div>
+              <h1><%= @user.firstname %> <%= @user.lastname %> <br></h1>
+              <br>
+              <span class="glyphicon glyphicon-time"></span> Joined on <%= @user.created_at.strftime("%B") %> <%= @user.created_at.year %><br>
+              <span class="glyphicon glyphicon-home"></span>  Lives in <%= @user.current_city %>
           </div>
-          <div class="center">
+          <br>
+          <div>
             <%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary" %>
             <%= link_to "Delete Profile", @user, class: "btn btn-primary",method: :delete, data: { confirm: 'Are you sure you want to delete this profile?' }%>
           </div>
       </div>
       <div class="col-md-6">
         <div class="profile_info">
-          <h1> Posts made by this user </h1>
+          <div class="profile_header"> <h1 class="title"> Posts made by this user </h1> </div>
           <br>
           <ul id="poststitle">
             <% if(@user.posts.count===0) %>
@@ -36,7 +38,7 @@
                                 class: "btn btn-info btn-md glyphicon glyphicon-trash",
                                 data: { confirm: 'Are you sure you want to delete ?' },
                                 params: {'post[id]'=>current_user.id} %>
-                  <%= time_ago_in_words(post.created_at) %> ago
+                  -<%= time_ago_in_words(post.created_at) %> ago
                 </div>
                 <br>
               </li>
