@@ -1,0 +1,28 @@
+<div class="row justify-content-center">
+  <div class="col-4">
+        <p id="notice"><%= notice %></p>
+        <%= form_for @city do |f| %>
+          <br>
+          <h1> Add a New City </h1>
+          <br>
+          <div class="layout">
+            <strong> Name </strong>
+            <%= f.text_field :title,class:"form-control" %>
+          </div>
+
+          <div class="layout">
+            <strong> Iconic Image </strong>
+            <%= f.text_area :content,class:"form-control" %>
+          </div>
+
+          <div class="layout">
+            <strong> Site Wide Header </strong>
+            <%= f.text_area :content,class:"form-control" %>
+          </div>
+
+          <div class="center">
+            <%= f.submit "Submit",:class => "btn btn-primary" %>
+          </div>
+        <% end %>
+  </div>
+</div>

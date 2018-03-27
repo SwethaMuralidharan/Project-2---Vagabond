@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-      <div class="col-md-6">
+      <div class="col-md-4">
           <div class="profile_info">
               <div class="profile_header"> <h1 class="title"> User Info </h1> </div>
               <div class="round-image-100"><%= image_tag(@user.avatar.url(:medium)) %></div>
@@ -10,12 +10,12 @@
               <span class="glyphicon glyphicon-home"></span>  Lives in <%= @user.current_city %>
           </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="profile_info">
           <div> <h1 class="title"> Posts made by this user </h1> </div><br>
-           <h1 class="title"> City : <%= @post.city.name %> </h1> <br>
+           <h1 class="title"> <%= @post.city.name %> </h1> <br>
            <h2 class="justify"> <p> <%= @post.title %> : </p> </h2> <br>
-           <h3 class="justify"> <%= @post.content %> </h3>
+           <p><%= @post.content %></p> 
            -<%= time_ago_in_words(@post.created_at) %> ago
       </div>
   </div>

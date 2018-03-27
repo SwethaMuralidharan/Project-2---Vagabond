@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get '/logout', to: 'sessions#destroy'
     delete '/users/:id', to:"users#destroy"
     get '/cities/:city_id', to: 'cities#show', as: 'city'
+    post '/cities', to: 'cities#new', as: 'new_city'
     get '/cities', to: 'cities#index'
     get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
     get '/users/:id', to: 'users#show', as: 'user'
