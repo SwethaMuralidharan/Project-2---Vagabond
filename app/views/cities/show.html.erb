@@ -17,11 +17,11 @@
         <ul id="poststitle">
           <% @city.newest_posts.each do |post| %>
             <li>
-                <div class="flex-container">
-                  <div>
-                      <%= image_tag(post.user.avatar.url(:thumb))%>
+                <div>
+                  <div class="col-md-2">
+                      <%= image_tag(post.user.avatar.url(:thumb),size: "100x100") %>
                   </div>
-                  <div class="divpad">
+                  <div class="col-md-10 divpad">
                     <h1><%= link_to post.title, user_post_path(post.user,post) %></h1>
                     <p><%= post.content%></p>
                     <!-- <%= link_to truncate(post.content, :length => 100, :omission => '...... (view more)'),user_post_path(post.user,post), class: "content" %> -->
